@@ -54,6 +54,7 @@ export default function App() {
                 <FriendList
                     friends={friends}
                     onSelectedFriend={handleSelectedFriend}
+                    selectedFriend={selectedFriend}
                 ></FriendList>
                 {showAddFriend && (
                     <AddFriend onAddFriend={handleAddFriend}></AddFriend>
@@ -62,7 +63,9 @@ export default function App() {
                     {showAddFriend ? "Tutup" : "Tambah Teman"}
                 </button>
             </div>
-            {selectedFriend && <SplitBill></SplitBill>}
+            {selectedFriend && (
+                <SplitBill selectedFriend={selectedFriend}></SplitBill>
+            )}
         </div>
     );
 }
